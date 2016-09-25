@@ -1,0 +1,87 @@
+<div class="back-container">
+    <md-content>
+        <md-toolbar>
+            <h2 class="md-toolbar-tools">
+           <span flex-sm="25" flex="12" class="accent">
+               <!--<img src="images/logo.png" height="50" width="130">-->
+           </span>
+                <span flex="75"> Mood Vision  | <small> Check the mood of your friends!</small>  </span>
+            </h2>
+
+        </md-toolbar>
+    </md-content>
+
+    <div>
+
+
+        <div layout="row" layout-sm="row" layout-wrap layout-align="start start">
+            <div flex="15" flex-sm="0"></div>
+
+
+            <div flex-sm="100" flex="70">
+                <md-card layout-align="center center">
+                    <!--<md-toolbar class="md-primary">-->
+                        <!--<div class="md-toolbar-tools">-->
+                            <!--<h3>Login</h3>-->
+                        <!--</div>-->
+                    <!--</md-toolbar>-->
+                    <md-card-content>
+                        <div>
+                            <a class="md-button md-raised md-accent" type="file" ngf-select="uploadFiles($file, $invalidFiles)"
+                               accept="image/*">
+                                Select File</a>
+                        </div>
+                    <br>
+                    <md-divider></md-divider>
+                        <img ngf-src="file"  ngf-resize="{width: 300, height: 300}">
+
+                        <div ng-show="results">
+                            Joy : {{results.faceAnnotations[0].joyLikelihood}} <br>
+                            Sorrow : {{results.faceAnnotations[0].sorrowLikelihood}}<br>
+                            Anger : {{results.faceAnnotations[0].angerLikelihood}}<br>
+                            Surprise : {{results.faceAnnotations[0].surpriseLikelihood}}<br>
+                        </div>
+
+
+                        <!--{{results.faceAnnotations[0].underExposedLikelihood}}<br>-->
+                    </md-card-content>
+
+                </md-card>
+
+                <p class="md-body-1" layout layout-align="center center">
+
+                    “All I ever wanted was to reach out and touch another human being not just with my hands but with my heart.”
+                    ― Tahereh Mafi, Shatter Me
+                </p>
+
+                <!--<md-whiteframe class="md-whiteframe-1dp"  layout layout-align="center center">-->
+                <!--<md-content>-->
+                <!--<blockquote>-->
+                <!--“The painter has the Universe in his mind and hands.”<br>-->
+                <!-- - <span layout-align="right"> Leonardo Da Vinci</span>-->
+                <!--</blockquote>-->
+
+                <!--</md-content>-->
+                <!--</md-whiteframe>-->
+
+
+            </div>
+            <div hide-sm flex-sm="0" flex="15"></div>
+        </div>
+        <!--<div layout="row">-->
+        <!--<div flex="25">-->
+        <!--<md-button layout-align="left" class="btn md-raised md-warn" href="http://nikhilvj.techydudes.net/files/pune-pb.html?ckattempt=1"-->
+        <!--class="md-subhead" target="_blank">-->
+        <!--Footer Sample Text-->
+        <!--</md-button>-->
+        <!--</div>-->
+        <!--<div flex="50"></div>-->
+        <!--<div flex="25">-->
+
+        <!--</div>-->
+
+        <!--</div>-->
+
+
+    </div>
+</div>
