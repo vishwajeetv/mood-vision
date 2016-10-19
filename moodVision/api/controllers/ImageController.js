@@ -8,7 +8,7 @@
 const vision = require('node-cloud-vision-api');
 
 // init with auth
-vision.init({auth: 'AIzaSyDMosYwQ3avgzWZGxyCU844P-YO11Lv-kY'});
+vision.init({auth: ''});
 
 
 
