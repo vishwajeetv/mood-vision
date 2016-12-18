@@ -33,14 +33,28 @@
                         </div>
                     <br>
                     <md-divider></md-divider>
-                        <img ngf-src="file"  ngf-resize="{width: 300, height: 300}">
+                        <img ngf-src="file"  ngf-resize="{width: 600, height: 600}">
 
                         <div ng-show="results">
-                            Joy : {{results.faceAnnotations[0].joyLikelihood}} <br>
-                            Sorrow : {{results.faceAnnotations[0].sorrowLikelihood}}<br>
-                            Anger : {{results.faceAnnotations[0].angerLikelihood}}<br>
-                            Surprise : {{results.faceAnnotations[0].surpriseLikelihood}}<br>
-                        </div>
+                          <div ng-repeat="result in results">
+                            Joy : {{result.joyLikelihood}} <br>
+                            Sorrow : {{result.sorrowLikelihood}}<br>
+                            Anger : {{result.angerLikelihood}}<br>
+                            Surprise : {{result.surpriseLikelihood}}<br>
+
+
+
+                        <span ng-show="isLikely(result.joyLikelihood)">JOY</span>
+                        <span ng-show="isLikely(result.sorrowLikelihood)">SORROW</span>
+                        <span ng-show="isLikely(result.angerLikelihood)">ANGER</span>
+                        <span ng-show="isLikely(result.surpriseLikelihood)">SURPRISE</span>
+
+                            <md-divider></md-divider>
+                      </div>
+
+
+                    </div>
+
 
 
                         <!--{{results.faceAnnotations[0].underExposedLikelihood}}<br>-->
@@ -48,13 +62,15 @@
 
                 </md-card>
 
-                <p class="md-body-1" layout layout-align="center center">
 
-                    “All I ever wanted was to reach out and touch another human being not just with my hands but with my heart.”
-                    ― Tahereh Mafi, Shatter Me
-                </p>
 
-                <!--<md-whiteframe class="md-whiteframe-1dp"  layout layout-align="center center">-->
+              <p class='md-body-1' ng-show='quoteOfTheDay' layout layout-align='center center'>
+              <blockquote>
+              “All I ever wanted was to reach out and touch another human being not just with my hands but with my heart.”
+                <span layout="row" layout-align="end center" class="md-subhead"> - Tahereh Mafi, Shatter Me</span></blockquote>   </p>
+
+
+              <!--<md-whiteframe class="md-whiteframe-1dp"  layout layout-align="center center">-->
                 <!--<md-content>-->
                 <!--<blockquote>-->
                 <!--“The painter has the Universe in his mind and hands.”<br>-->
