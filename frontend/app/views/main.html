@@ -15,47 +15,51 @@
 
 
         <div layout="row" layout-sm="row" layout-wrap layout-align="start start">
-            <div flex="15" flex-sm="0"></div>
+            <div flex="5" flex-sm="0"></div>
 
 
-            <div flex-sm="100" flex="70">
-                <md-card layout-align="center center">
+            <div flex-sm="100" flex="90">
+                <md-card>
                     <!--<md-toolbar class="md-primary">-->
                         <!--<div class="md-toolbar-tools">-->
                             <!--<h3>Login</h3>-->
                         <!--</div>-->
                     <!--</md-toolbar>-->
                     <md-card-content>
-                        <div>
-                            <a class="md-button md-raised md-accent" type="file" ngf-select="uploadFiles($file, $invalidFiles)"
-                               accept="image/*">
-                                Select File</a>
-                        </div>
-                    <br>
-                    <md-divider></md-divider>
-                        <img ngf-src="file"  ngf-resize="{width: 600, height: 600}">
 
-                        <div ng-show="results">
-                          <div ng-repeat="result in results">
-                            Joy : {{result.joyLikelihood}} <br>
-                            Sorrow : {{result.sorrowLikelihood}}<br>
-                            Anger : {{result.angerLikelihood}}<br>
-                            Surprise : {{result.surpriseLikelihood}}<br>
-
-
-
-                        <span ng-show="isLikely(result.joyLikelihood)">JOY</span>
-                        <span ng-show="isLikely(result.sorrowLikelihood)">SORROW</span>
-                        <span ng-show="isLikely(result.angerLikelihood)">ANGER</span>
-                        <span ng-show="isLikely(result.surpriseLikelihood)">SURPRISE</span>
-
-                            <md-divider></md-divider>
+                      <div>
+                        <a class="md-button md-raised md-accent" type="file" ngf-select="uploadFiles($file, $invalidFiles)"
+                           accept="image/*">
+                          Select File</a>
                       </div>
 
+                      <div layout="row" layout-sm="row" layout-wrap layout-align="center center">
+                        <div flex="50">
+                          <img ngf-src="file"  ngf-resize="{width: 500, height: 500}">
+                        </div>
 
-                    </div>
+                        <div flex="50">
+                          <div ng-show="results">
+                            <div ng-repeat="result in results">
+                              Joy : {{result.joyLikelihood}} <br>
+                              Sorrow : {{result.sorrowLikelihood}}<br>
+                              Anger : {{result.angerLikelihood}}<br>
+                              Surprise : {{result.surpriseLikelihood}}<br>
 
 
+
+                              <span ng-show="isLikely(result.joyLikelihood)">JOY</span>
+                              <span ng-show="isLikely(result.sorrowLikelihood)">SORROW</span>
+                              <span ng-show="isLikely(result.angerLikelihood)">ANGER</span>
+                              <span ng-show="isLikely(result.surpriseLikelihood)">SURPRISE</span>
+
+                              <md-divider></md-divider>
+                            </div>
+
+
+                          </div>
+                        </div>
+                      </div>
 
                         <!--{{results.faceAnnotations[0].underExposedLikelihood}}<br>-->
                     </md-card-content>
@@ -82,7 +86,7 @@
 
 
             </div>
-            <div hide-sm flex-sm="0" flex="15"></div>
+            <div hide-sm flex-sm="0" flex="5"></div>
         </div>
         <!--<div layout="row">-->
         <!--<div flex="25">-->
