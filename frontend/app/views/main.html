@@ -1,9 +1,9 @@
 <div class="back-container">
     <md-content>
-        <md-toolbar>
+        <md-toolbar md-colors="{background:'blue'}">
             <h2 class="md-toolbar-tools">
            <span flex-sm="25" flex="12" class="accent">
-               <!--<img src="images/logo.png" height="50" width="130">-->
+
            </span>
               <span flex="75"> Mood Vision  <span hide-sm hide-xs>| <small > Check the mood of your friends!</small></span>  </span>
             </h2>
@@ -20,23 +20,19 @@
 
             <div flex-sm="100" flex="90">
 
-                    <!--<md-toolbar class="md-primary">-->
-                        <!--<div class="md-toolbar-tools">-->
-                            <!--<h3>Login</h3>-->
-                        <!--</div>-->
-                    <!--</md-toolbar>-->
 
 
                       <center>
                         <a class="md-button md-raised md-accent" type="file" ngf-select="uploadFiles($file, $invalidFiles)"
                            accept="image/*">
                          <md-icon>add_a_photo</md-icon> Select Photo</a>
+                        <div class="error md-title">{{error}}</div>
                       </center>
 
                       <div layout="row" layout-sm="row" layout-wrap layout-align="center center">
                         <div flex="50" flex-sm="100" flex-xs="100">
                           <md-card ng-show="file">
-                            <md-toolbar class="md-default">
+                            <md-toolbar class="md-default" md-colors="{background:'amber-A100'}">
                               <div class="md-toolbar-tools">
                                 <h2>Image</h2>
                               </div>
@@ -54,7 +50,7 @@
 
                           <div ng-show="results">
                             <md-card>
-                              <md-toolbar class="md-default">
+                              <md-toolbar class="md-default"  md-colors="{background:'amber-A100'}">
                                 <div class="md-toolbar-tools">
                                   <h2>Mood</h2>
                                 </div>
@@ -62,12 +58,12 @@
 
                               <md-card-content>
                                 <div ng-repeat="result in results">
-                                  <div class="md-title">Person {{($index+1)}}</div>
-                                  <div ng-show="isLikely(result.joyLikelihood)"><img ng-repeat="i in howManyTimes(result.joyLikelihood)" src="images/mood-icons/happy.svg"> </div>
-                                  <div ng-show="isLikely(result.sorrowLikelihood)"><img ng-repeat="i in howManyTimes(result.sorrowLikelihood)" src="images/mood-icons/sad.svg"></div>
-                                  <div ng-show="isLikely(result.angerLikelihood)"><img ng-repeat="i in howManyTimes(result.angerLikelihood)" src="images/mood-icons/angry.svg"></div>
-                                  <div ng-show="isLikely(result.surpriseLikelihood)"><img ng-repeat="i in howManyTimes(result.surpriseLikelihood)" src="images/mood-icons/confused.svg"></div>
-                                  <div ng-hide="isEmotionPresent(result)"><img src="images/mood-icons/neutral.svg"></div>
+                                  <div class="md-subhead">Person {{($index+1)}}</div>
+                                  <div ng-show="isLikely(result.joyLikelihood)"><md-icon ng-repeat="i in howManyTimes(result.joyLikelihood)" class="mood joy" ng-md-svg-src="images/mood-icons/happy.svg"> </div>
+                                  <div ng-show="isLikely(result.sorrowLikelihood)"><img ng-repeat="i in howManyTimes(result.sorrowLikelihood)" class="mood sorrow" md-svg-src="images/mood-icons/sad.svg"></div>
+                                  <div ng-show="isLikely(result.angerLikelihood)"><img ng-repeat="i in howManyTimes(result.angerLikelihood)" class="mood angry" md-svg-src="images/mood-icons/angry.svg"></div>
+                                  <div ng-show="isLikely(result.surpriseLikelihood)"><img ng-repeat="i in howManyTimes(result.surpriseLikelihood)" class="mood confused" md-svg-src="images/mood-icons/confused.svg"></div>
+                                  <div ng-hide="isEmotionPresent(result)" class="md-display-1"><md-icon class="mood neutral" md-svg-src="images/mood-icons/neutral.svg"></div>
 <br>
                                 </div>
 

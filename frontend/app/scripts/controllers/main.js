@@ -12,6 +12,7 @@ angular.module('moodVisionFrontendApp')
 
     $scope.likelySentimentValues = ['POSSIBLE','LIKELY','VERY_LIKELY'];
 
+    $scope.error = '';
     $scope.emotions = ['joyLikelihood','sorrowLikelihood','angerLikelihood','surpriseLikelihood'];
 
     $scope.isLikely = function (sentiment) {
@@ -61,6 +62,8 @@ angular.module('moodVisionFrontendApp')
 
     };
       $scope.uploadFiles = function(file, errFiles) {
+
+        $scope.error = "";
           $scope.results = null;
           $scope.file = file;
           $scope.errFile = errFiles && errFiles[0];
@@ -73,6 +76,10 @@ angular.module('moodVisionFrontendApp')
               file.upload.then(function (response) {
                   $timeout(function () {
                       $scope.results = response.data.responses[0].faceAnnotations;
+                      if(!$scope.results)
+                      {
+                        $scope.error = "No humans found!";
+                      }
                   });
               }, function (response) {
                   if (response.status > 0)

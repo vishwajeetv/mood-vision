@@ -56,3 +56,34 @@ blockquote:before {
   margin-right: 0.25em;
   vertical-align: -0.4em;
 }
+
+
+.joy
+{
+  color: green;
+}
+.sorrw
+{
+  color: purple;
+}
+.angry
+{
+  color:red;
+}
+
+.confused
+{
+  color:yellow;
+}
+
+.neutral
+{
+  color:grey;
+}
+
+.mood
+{
+
+  height: 48px;
+  width: 48px;
+}
