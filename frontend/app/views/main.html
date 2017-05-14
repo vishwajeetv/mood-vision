@@ -5,7 +5,7 @@
            <span flex-sm="25" flex="12" class="accent">
                <!--<img src="images/logo.png" height="50" width="130">-->
            </span>
-                <span flex="75"> Mood Vision  | <small> Check the mood of your friends!</small>  </span>
+              <span flex="75"> Mood Vision  <span hide-sm hide-xs>| <small > Check the mood of your friends!</small></span>  </span>
             </h2>
 
         </md-toolbar>
@@ -19,88 +19,82 @@
 
 
             <div flex-sm="100" flex="90">
-                <md-card>
+
                     <!--<md-toolbar class="md-primary">-->
                         <!--<div class="md-toolbar-tools">-->
                             <!--<h3>Login</h3>-->
                         <!--</div>-->
                     <!--</md-toolbar>-->
-                    <md-card-content>
 
-                      <div>
+
+                      <center>
                         <a class="md-button md-raised md-accent" type="file" ngf-select="uploadFiles($file, $invalidFiles)"
                            accept="image/*">
                           Select File</a>
-                      </div>
+                      </center>
 
                       <div layout="row" layout-sm="row" layout-wrap layout-align="center center">
-                        <div flex="50">
-                          <img ngf-src="file"  ngf-resize="{width: 500, height: 500}">
+                        <div flex="50" flex-sm="100" flex-xs="100">
+                          <md-card ng-show="file">
+                            <md-toolbar class="md-default">
+                              <div class="md-toolbar-tools">
+                                <h2>Image</h2>
+                              </div>
+                            </md-toolbar>
+                            <md-card-content>
+                              <center>
+                                <img ngf-src="file"  ngf-resize="{width: 400, height: 400}">
+                              </center>
+                            </md-card-content>
+                          </md-card>
+
                         </div>
 
-                        <div flex="50">
+                        <div flex="50" flex-sm="100" flex-xs="100">
+
                           <div ng-show="results">
-                            <div ng-repeat="result in results">
-                              Joy : {{result.joyLikelihood}} <br>
-                              Sorrow : {{result.sorrowLikelihood}}<br>
-                              Anger : {{result.angerLikelihood}}<br>
-                              Surprise : {{result.surpriseLikelihood}}<br>
+                            <md-card>
+                              <md-toolbar class="md-default">
+                                <div class="md-toolbar-tools">
+                                  <h2>Emotions</h2>
+                                </div>
+                              </md-toolbar>
+
+                              <md-card-content>
+                                <div ng-repeat="result in results">
+
+                                  <div ng-show="isLikely(result.joyLikelihood)"><img ng-repeat="i in howManyTimes(result.joyLikelihood)" src="../images/mood-icons/happy.svg"> </div>
+                                  <div ng-show="isLikely(result.sorrowLikelihood)"><img ng-repeat="i in howManyTimes(result.sorrowLikelihood)" src="../images/mood-icons/sad.svg"></div>
+                                  <div ng-show="isLikely(result.angerLikelihood)"><img ng-repeat="i in howManyTimes(result.angerLikelihood)" src="../images/mood-icons/angry.svg"></div>
+                                  <div ng-show="isLikely(result.surpriseLikelihood)"><img ng-repeat="i in howManyTimes(result.surpriseLikelihood)" src="../images/mood-icons/confused.svg"></div>
+                                  <div ng-hide="isEmotionPresent(result)"><img src="../images/mood-icons/neutral.svg"></div>
+
+                                </div>
 
 
-
-                              <span ng-show="isLikely(result.joyLikelihood)">JOY</span>
-                              <span ng-show="isLikely(result.sorrowLikelihood)">SORROW</span>
-                              <span ng-show="isLikely(result.angerLikelihood)">ANGER</span>
-                              <span ng-show="isLikely(result.surpriseLikelihood)">SURPRISE</span>
-
-                              <md-divider></md-divider>
-                            </div>
-
-
+                              </md-card-content>
+                            </md-card>
                           </div>
+
                         </div>
                       </div>
 
-                        <!--{{results.faceAnnotations[0].underExposedLikelihood}}<br>-->
-                    </md-card-content>
-
-                </md-card>
 
 
 
-              <p class='md-body-1' ng-show='quoteOfTheDay' layout layout-align='center center'>
+
+              <div hide-xs hide-sm>
+              <p class='md-body-1'  ng-show='quoteOfTheDay' layout layout-align='center center'>
               <blockquote>
               “All I ever wanted was to reach out and touch another human being not just with my hands but with my heart.”
                 <span layout="row" layout-align="end center" class="md-subhead"> - Tahereh Mafi, Shatter Me</span></blockquote>   </p>
-
-
-              <!--<md-whiteframe class="md-whiteframe-1dp"  layout layout-align="center center">-->
-                <!--<md-content>-->
-                <!--<blockquote>-->
-                <!--“The painter has the Universe in his mind and hands.”<br>-->
-                <!-- - <span layout-align="right"> Leonardo Da Vinci</span>-->
-                <!--</blockquote>-->
-
-                <!--</md-content>-->
-                <!--</md-whiteframe>-->
+              </div>
 
 
             </div>
             <div hide-sm flex-sm="0" flex="5"></div>
         </div>
-        <!--<div layout="row">-->
-        <!--<div flex="25">-->
-        <!--<md-button layout-align="left" class="btn md-raised md-warn" href="http://nikhilvj.techydudes.net/files/pune-pb.html?ckattempt=1"-->
-        <!--class="md-subhead" target="_blank">-->
-        <!--Footer Sample Text-->
-        <!--</md-button>-->
-        <!--</div>-->
-        <!--<div flex="50"></div>-->
-        <!--<div flex="25">-->
 
-        <!--</div>-->
-
-        <!--</div>-->
 
 
     </div>

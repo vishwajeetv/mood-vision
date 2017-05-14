@@ -8,4 +8,4 @@
  * Constant in the moodVisionFrontendApp.
  */
 angular.module('moodVisionFrontendApp')
-  .constant('SERVER_URL', 'http://localhost:1337/');
+  .constant('SERVER_URL', 'http://192.168.0.13:1337/');

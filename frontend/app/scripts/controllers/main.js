@@ -12,6 +12,8 @@ angular.module('moodVisionFrontendApp')
 
     $scope.likelySentimentValues = ['POSSIBLE','LIKELY','VERY_LIKELY'];
 
+    $scope.emotions = ['joyLikelihood','sorrowLikelihood','angerLikelihood','surpriseLikelihood'];
+
     $scope.isLikely = function (sentiment) {
       if($scope.likelySentimentValues.indexOf(sentiment) > -1)
       {
@@ -21,7 +23,43 @@ angular.module('moodVisionFrontendApp')
       {
         return false;
       }
-    }
+    };
+
+    $scope.isEmotionPresent = function (result) {
+      var emotionPresent = false;
+          $scope.emotions.forEach(function(emotion){
+            if($scope.isLikely(result[emotion]))
+            {
+              emotionPresent = true;
+            }
+          })
+
+      return emotionPresent;
+
+    };
+
+    $scope.howManyTimes = function (sentiment) {
+      if($scope.isLikely(sentiment))
+      {
+        if($scope.likelySentimentValues[0] == sentiment)
+        {
+          return [1];
+        }
+        else if($scope.likelySentimentValues[1] == sentiment)
+        {
+          return [1,2];
+        }
+        else if($scope.likelySentimentValues[2] == sentiment)
+        {
+          return [1,2,3];
+        }
+      }
+      else
+      {
+        return [];
+      }
+
+    };
       $scope.uploadFiles = function(file, errFiles) {
           $scope.results = null;
           $scope.file = file;
@@ -34,11 +72,7 @@ angular.module('moodVisionFrontendApp')
 
               file.upload.then(function (response) {
                   $timeout(function () {
-                      //file.result = response.data;
-                    console.log(response.data.responses[0].faceAnnotations);
                       $scope.results = response.data.responses[0].faceAnnotations;
-
-                    console.log($scope.likelySentimentValues.indexOf($scope.results[0].joyLikelihood));
                   });
               }, function (response) {
                   if (response.status > 0)

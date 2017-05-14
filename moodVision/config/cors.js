@@ -74,5 +74,7 @@ module.exports.cors = {
   ***************************************************************************/
 
   // headers: 'content-type'
-  allRoutes: true
+  allRoutes: true,
+  origin: '*',
+  credentials: false
 };

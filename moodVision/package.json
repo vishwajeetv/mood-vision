@@ -6,6 +6,7 @@
   "keywords": [],
   "dependencies": {
     "@google-cloud/vision": "^0.2.0",
+    "aws-sdk": "^2.7.15",
     "ejs": "2.3.4",
     "grunt": "1.0.1",
     "grunt-contrib-clean": "1.0.0",

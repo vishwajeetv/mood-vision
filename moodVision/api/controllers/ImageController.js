@@ -8,7 +8,7 @@
 const vision = require('node-cloud-vision-api');
 
 // init with auth
-vision.init({auth: ''});
+vision.init({auth: 'AIzaSyDMosYwQ3avgzWZGxyCU844P-YO11Lv-kY'});
 
 
 
@@ -29,7 +29,7 @@ module.exports = {
             const req = new vision.Request({
                 image: new vision.Image(uploadedFiles[0].fd),
                 features: [
-                    new vision.Feature('FACE_DETECTION', 10)
+                    new vision.Feature('FACE_DETECTION', 20)
                 ]
             });
 
