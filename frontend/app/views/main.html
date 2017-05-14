@@ -59,10 +59,10 @@
                               <md-card-content>
                                 <div ng-repeat="result in results">
                                   <div class="md-subhead">Person {{($index+1)}}</div>
-                                  <div ng-show="isLikely(result.joyLikelihood)"><md-icon ng-repeat="i in howManyTimes(result.joyLikelihood)" class="mood joy" ng-md-svg-src="images/mood-icons/happy.svg"> </div>
-                                  <div ng-show="isLikely(result.sorrowLikelihood)"><img ng-repeat="i in howManyTimes(result.sorrowLikelihood)" class="mood sorrow" md-svg-src="images/mood-icons/sad.svg"></div>
-                                  <div ng-show="isLikely(result.angerLikelihood)"><img ng-repeat="i in howManyTimes(result.angerLikelihood)" class="mood angry" md-svg-src="images/mood-icons/angry.svg"></div>
-                                  <div ng-show="isLikely(result.surpriseLikelihood)"><img ng-repeat="i in howManyTimes(result.surpriseLikelihood)" class="mood confused" md-svg-src="images/mood-icons/confused.svg"></div>
+                                  <div ng-show="isLikely(result.joyLikelihood)"><md-icon ng-repeat="i in howManyTimes(result.joyLikelihood)" class="mood joy" md-svg-src="images/mood-icons/happy.svg"> </div>
+                                  <div ng-show="isLikely(result.sorrowLikelihood)"><md-icon ng-repeat="i in howManyTimes(result.sorrowLikelihood)" class="mood sorrow" md-svg-src="images/mood-icons/sad.svg"></div>
+                                  <div ng-show="isLikely(result.angerLikelihood)"><md-icon ng-repeat="i in howManyTimes(result.angerLikelihood)" class="mood angry" md-svg-src="images/mood-icons/angry.svg"></div>
+                                  <div ng-show="isLikely(result.surpriseLikelihood)"><md-icon ng-repeat="i in howManyTimes(result.surpriseLikelihood)" class="mood confused" md-svg-src="images/mood-icons/confused.svg"></div>
                                   <div ng-hide="isEmotionPresent(result)" class="md-display-1"><md-icon class="mood neutral" md-svg-src="images/mood-icons/neutral.svg"></div>
 <br>
                                 </div>
