@@ -30,7 +30,7 @@
                       <center>
                         <a class="md-button md-raised md-accent" type="file" ngf-select="uploadFiles($file, $invalidFiles)"
                            accept="image/*">
-                          Select File</a>
+                         <md-icon>add_a_photo</md-icon> Select Photo</a>
                       </center>
 
                       <div layout="row" layout-sm="row" layout-wrap layout-align="center center">
@@ -56,19 +56,19 @@
                             <md-card>
                               <md-toolbar class="md-default">
                                 <div class="md-toolbar-tools">
-                                  <h2>Emotions</h2>
+                                  <h2>Mood</h2>
                                 </div>
                               </md-toolbar>
 
                               <md-card-content>
                                 <div ng-repeat="result in results">
-
+                                  <div class="md-title">Person {{($index+1)}}</div>
                                   <div ng-show="isLikely(result.joyLikelihood)"><img ng-repeat="i in howManyTimes(result.joyLikelihood)" src="../images/mood-icons/happy.svg"> </div>
                                   <div ng-show="isLikely(result.sorrowLikelihood)"><img ng-repeat="i in howManyTimes(result.sorrowLikelihood)" src="../images/mood-icons/sad.svg"></div>
                                   <div ng-show="isLikely(result.angerLikelihood)"><img ng-repeat="i in howManyTimes(result.angerLikelihood)" src="../images/mood-icons/angry.svg"></div>
                                   <div ng-show="isLikely(result.surpriseLikelihood)"><img ng-repeat="i in howManyTimes(result.surpriseLikelihood)" src="../images/mood-icons/confused.svg"></div>
                                   <div ng-hide="isEmotionPresent(result)"><img src="../images/mood-icons/neutral.svg"></div>
-
+<br>
                                 </div>
 
 
