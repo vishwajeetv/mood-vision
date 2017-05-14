@@ -86,3 +86,15 @@ blockquote:before {
   height: 3rem;
   width: 3rem;
 }
+
+
+#loading-bar .bar {
+  background: #ff1425;
+  height: 3px;
+}
+
+#loading-bar-spinner .spinner-icon {
+  border: solid 3px transparent;
+  border-top-color: #ff1425;
+  border-left-color: #ff1425;
+}
