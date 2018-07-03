@@ -29,7 +29,8 @@ module.exports = {
             const req = new vision.Request({
                 image: new vision.Image(uploadedFiles[0].fd),
                 features: [
-                    new vision.Feature('FACE_DETECTION', 20)
+                    new vision.Feature('FACE_DETECTION', 20),
+                    new vision.Feature('LABEL_DETECTION',5)
                 ]
             });
 
