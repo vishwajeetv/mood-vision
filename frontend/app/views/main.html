@@ -57,6 +57,10 @@
                               </md-toolbar>
 
                               <md-card-content>
+                                <md-chips>
+                                  <md-chip ng-repeat="label in labels">{{label.description}}</md-chip>
+                                </md-chips>
+
                                 <div ng-repeat="result in results">
                                   <div class="md-subhead">Person {{($index+1)}}</div>
                                   <div ng-show="isLikely(result.joyLikelihood)"><md-icon ng-repeat="i in howManyTimes(result.joyLikelihood)" class="mood joy" md-svg-src="images/mood-icons/happy.svg"> </div>

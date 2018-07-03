@@ -76,6 +76,7 @@ angular.module('moodVisionFrontendApp')
               file.upload.then(function (response) {
                   $timeout(function () {
                       $scope.results = response.data.responses[0].faceAnnotations;
+                      $scope.labels = response.data.responses[0].labelAnnotations;
                       if(!$scope.results)
                       {
                         $scope.error = "No humans found!";
